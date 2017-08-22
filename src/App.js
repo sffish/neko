@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react'
 import {logo} from './neko-01.svg';
-import styles from "./main.less";
+import style from "./main.less";
 //import style from "./index.css";
 
 class App extends Component {
 
   render() {
-    console.log(styles)
+    console.log(style)
     //console.log(style)
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={"./neko-01.svg"} className="App-logo" alt="logo" />
+      <div className={style.App}>
+        <div className={style['App-header']}>
+          <img src={"./neko-01.svg"} className={style['App-logo']} alt="logo" />
           <h2>Welcome to React miao</h2>
         </div>
-        <p className="App-intro">
+        <p className={style['App-intro']}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
          <Button

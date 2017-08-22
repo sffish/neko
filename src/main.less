@@ -13,16 +13,19 @@
   to { transform: rotate(360deg); }
 }
 
-
-body{
-    background-color: #000000;
+*{
+  font-size:16px;
 }
 
 .testclass{
   font-size: 17px;
 }
 
-:global{
+body{
+    background-color: #f0f0f0;
+}
+
+:local {
   .App {
     text-align: center;
   }
@@ -42,7 +45,7 @@ body{
   .App-intro {
     font-size: large;
   }
-}
 
+}
 
 

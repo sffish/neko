@@ -18,32 +18,6 @@ module.exports = {
     extensions: ['.js', '.jsx','.less','.css', '.svg','.png','.woff','.woff2','.jpg','.gif','.ttf','.eot']
   },
   module: {
-    loaders: [
-      {
-        test: /\.(js)$/,
-        loader: 'babel-loader', 
-        /*include: [srcPath],*/
-        include: /src/,
-        query: {
-          presets: ['es2015', 'react']
-        }
-      },
-      { //CSS
-        test: /\.(css)$/,
-        loader: "style-loader!css-loader"
-      },
-      
-      { 
-        test: /\.(less)$/,
-        include: /src/,
-        loader: "style-loader!css-loader!less-loader"
-      },
-      {
-        test: /\.(html)$/,
-        include: /src/,
-        loader: 'file-loader?name=[name].[ext]'
-      }
-    ],
     rules: [
       { //JS
         test: /\.js$/,
@@ -54,7 +28,7 @@ module.exports = {
         ]
       },
       { //CSS
-        test: /\.(css)$/,
+        test: /\.css$/,
         use:[
           { loader: "style-loader" },
           { loader: "css-loader" }
