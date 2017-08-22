@@ -10,20 +10,22 @@ class App extends Component {
     console.log(style)
     //console.log(style)
     return (
-      <div className={style.App}>
-        <div className={style['App-header']}>
-          <img src={"./neko-01.svg"} className={style['App-logo']} alt="logo" />
-          <h2>Welcome to React miao</h2>
+      <div className="container">
+        <div className={style.App}>
+          <div className={style['App-header']}>
+            <img src={"./neko-01.svg"} className={style['App-logo']+' spin' } alt="logo" />
+            <h2>Welcome to React miao</h2>
+          </div>
+          <p className={style['App-intro']}>
+            To get started, edit <code>src/App.js</code> and save to reload.
+          </p>
+           <Button
+            content='Like'
+            icon='heart'
+            label={{ as: 'a', basic: true, content: '2,048' }}
+            labelPosition='right'
+          />
         </div>
-        <p className={style['App-intro']}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-         <Button
-          content='Like'
-          icon='heart'
-          label={{ as: 'a', basic: true, content: '2,048' }}
-          labelPosition='right'
-        />
       </div>
     );
   }
