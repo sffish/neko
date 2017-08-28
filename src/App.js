@@ -4,10 +4,39 @@ import {logo} from './neko-01.svg';
 import style from "./main.less";
 //import style from "./index.css";
 
-class App extends Component {
+
+
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      scrollTop: 0,
+      catwalk:0
+    }
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll(event) {
+    this.setState( (prevState, props) => {
+        
+      const catwalk = document.body.scrollTop - document.getElementById('zone-scroll').offsetTop;
+      return {
+        scrollTop:document.body.scrollTop,
+        catwalk:catwalk>0? catwalk:0
+      }   
+    })
+  }
 
   render() {
-    console.log(style)
+    console.log(this.state);
     //console.log(style)
     return (
       <div className="container">
@@ -16,9 +45,23 @@ class App extends Component {
             <img src={"./neko-01.svg"} className={style['App-logo']+' spin' } alt="logo" />
             <h2>Welcome to React miao</h2>
           </div>
-          <p className={style['App-intro']}>
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          <div className={style['App-intro']} id="zone-scroll">
+            <div className={style.section} id="zone-scroll-1">
+              <div className ={style.titlepic} style={{backgroundImage:'url(./neko-01.svg)', left:(this.state.catwalk*0.5).toString()+'px' }}>
+              </div>
+            </div>
+            <hr /> 
+            <div className={style.section}>
+              <div className ={style.titlepic} style={{backgroundImage:'url(./neko-01.svg)', left:(this.state.catwalk*3).toString()+'px' }}>
+              </div>
+            </div> 
+            <hr />
+            <div className={style.section}>
+              <div className ={style.titlepic} style={{backgroundImage:'url(./neko-01.svg)', left:(this.state.catwalk*3).toString()+'px' }}>
+              </div>
+            </div> 
+          </div>
+
            <Button
             content='Like'
             icon='heart'
