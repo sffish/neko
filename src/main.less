@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 //colors
-@purple: #b8849b;
+@purple: hsla(345, 12%, 55%, 1);
 @light-green: #52ffa8;
-@light-green-mild: hsl(149, 77%, 62%);
-@dark-green: #409b57;
+@light-green-mild:#5fd896;
+@sick-green: hsl(167, 40%, 68%);
+@dark-green: #476b50;
 @teal: #46d7d7;
 @emerald: #45d7d7;
 @darkgray:#717874;
@@ -187,8 +188,11 @@
       color:@light-green;
       font-weight: 500;
       letter-spacing: 0.3vw;
-      font-family:'verdana';
-      
+      font-family:'verdana'; 
+    }
+    .menu-item:hover{
+      border-bottom: 1px solid @sick-green;
+      cursor: default;
     }
   }
 

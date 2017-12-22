@@ -3,6 +3,7 @@ import { Button, Grid } from 'semantic-ui-react'
 import {logo} from './neko-01.svg';
 import style from "./main.less";
 import LIB from './lib'
+var FontAwesome = require('react-fontawesome');
 //import style from "./index.css";
 
 const Column = Grid.Column;
@@ -55,17 +56,22 @@ class App extends React.Component {
                 </Column>
                 <Column centered mobile={10} tablet={10} computer={10} className="pb-30 pt-30">
                   <Grid centered>
-                      <Column width={4} className="text-center">
+                      <Column width={3} className="text-center">
                         <div className={LIB.getStyle('menu-item')}>About</div>
                       </Column>
-                      <Column width={4} className="text-center">
+                      <Column width={3} className="text-center">
                         <div className={LIB.getStyle('menu-item')}>Experience</div>
                       </Column>
-                      <Column width={4} className="text-center">
+                      <Column width={3} className="text-center">
                         <div className={LIB.getStyle('menu-item')}>Education</div>
                       </Column>
-                      <Column width={4} className="text-center">
+                      <Column width={3} className="text-center">
                         <div className={LIB.getStyle('menu-item')}>Hobbies</div>
+                      </Column>
+                      <Column width={3} className="text-center">
+                        <div><FontAwesome name='rocket' /></div>
+                        <FontAwesome name='facebook' />
+                        <FontAwesome name='flickr' />
                       </Column>
                   </Grid>
                 </Column>
